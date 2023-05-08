@@ -1,7 +1,7 @@
 package org.netology.planner;
 
 public class Todos {
-    private Task[] tasks = new Task[0]; // <- тут будут все задачи
+    private Task[] tasks = new Task[0];
 
     private Task[] addToArray(Task[] current, Task task) {
         Task[] tmp = new Task[current.length + 1];
