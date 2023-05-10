@@ -16,9 +16,10 @@ public class TaskTest {
 
         Assertions.assertEquals(expected, actual);
     }
+
     @Test
     public void shouldFindMatchingTasksEpicInOneSubtask() {
-        String[] subtasks = { "Молоко", "Яйца", "Хлеб" };
+        String[] subtasks = {"Молоко", "Яйца", "Хлеб"};
         Epic epic = new Epic(2, subtasks);
 
         epic.matches("Хлеб");
@@ -28,9 +29,10 @@ public class TaskTest {
 
         Assertions.assertEquals(expected, actual);
     }
+
     @Test
     public void shouldNotFindDifferentTasksEpicInOneSubtask() {
-        String[] subtasks = { "Молоко", "Яйца", "Хлеб" };
+        String[] subtasks = {"Молоко", "Яйца", "Хлеб"};
         Epic epic = new Epic(2, subtasks);
 
         epic.matches("Сыр");
@@ -40,9 +42,10 @@ public class TaskTest {
 
         Assertions.assertEquals(expected, actual);
     }
+
     @Test
     public void shouldFindMatchingTasksEpicInTwoSubtasks() {
-        String[] subtasks = { "Сыр свежий", "Яйца", "Хлеб свежий" };
+        String[] subtasks = {"Сыр свежий", "Яйца", "Хлеб свежий"};
         Epic epic = new Epic(2, subtasks);
 
         epic.matches("свежий");
@@ -52,6 +55,7 @@ public class TaskTest {
 
         Assertions.assertEquals(expected, actual);
     }
+
     @Test
     public void shouldFindMatchingTasksMeetingIfTopic() {
         Meeting meeting = new Meeting(
@@ -68,6 +72,7 @@ public class TaskTest {
 
         Assertions.assertEquals(expected, actual);
     }
+
     @Test
     public void shouldNotFindDifferentTasksMeetingIfTopic() {
         Meeting meeting = new Meeting(
@@ -84,6 +89,7 @@ public class TaskTest {
 
         Assertions.assertEquals(expected, actual);
     }
+
     @Test
     public void shouldFindMatchingTasksMeetingIfProject() {
         Meeting meeting = new Meeting(
@@ -100,6 +106,7 @@ public class TaskTest {
 
         Assertions.assertEquals(expected, actual);
     }
+
     @Test
     public void shouldNotFindDifferentTasksMeetingIfProject() {
         Meeting meeting = new Meeting(
@@ -116,11 +123,12 @@ public class TaskTest {
 
         Assertions.assertEquals(expected, actual);
     }
+
     @Test
     public void shouldNotFindId() {
         SimpleTask simpleTask = new SimpleTask(5, "Позвонить родителям");
 
-        String[] subtasks = { "Молоко", "Яйца", "Хлеб" };
+        String[] subtasks = {"Молоко", "Яйца", "Хлеб"};
         Epic epic = new Epic(5, subtasks);
 
         Meeting meeting = new Meeting(
@@ -135,10 +143,13 @@ public class TaskTest {
         meeting.matches("5");
 
         boolean expected = false;
-        boolean actual = simpleTask.matches("5"); epic.matches("5"); meeting.matches("5");
+        boolean actual = simpleTask.matches("5");
+        epic.matches("5");
+        meeting.matches("5");
 
         Assertions.assertEquals(expected, actual);
     }
+
     @Test
     public void shouldFindIdInSimpleTask() {
         SimpleTask simpleTask = new SimpleTask(7, "Позвонить родителям");
@@ -162,6 +173,7 @@ public class TaskTest {
 
         Assertions.assertEquals(expected, actual);
     }
+
     @Test
     public void shouldFindIdInEpic() {
         SimpleTask simpleTask = new SimpleTask(7, "Позвонить родителям");
@@ -177,13 +189,14 @@ public class TaskTest {
         );
 
 
-       epic.getId();
+        epic.getId();
 
         int expected = 3;
         int actual = epic.getId();
 
         Assertions.assertEquals(expected, actual);
     }
+
     @Test
     public void shouldFindIdInMeeting() {
         SimpleTask simpleTask = new SimpleTask(7, "Позвонить родителям");

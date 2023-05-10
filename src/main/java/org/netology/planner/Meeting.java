@@ -9,9 +9,11 @@ public class Meeting extends Task {
     public String getTopic() {
         return topic;
     }
+
     public String getProject() {
         return project;
     }
+
     public String getStart() {
         return start;
     }
@@ -22,6 +24,7 @@ public class Meeting extends Task {
         this.project = project;
         this.start = start;
     }
+
     @Override
     public boolean matches(String query) {
         if (topic.contains(query)) {

@@ -18,7 +18,8 @@ public class Epic extends Task {
             if (s.contains(query)) {
                 return true;
             }
-        } return false;
+        }
+        return false;
     }
 }
 
